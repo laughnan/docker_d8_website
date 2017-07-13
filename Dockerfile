@@ -4,8 +4,8 @@ FROM centos:7
 RUN yum update -y
 
 # install rpm for php 5.6
-RUN http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
-RUN http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
+RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # install necessary libraries (includes php, ruby, gems, and git)
 RUN yum install php56w php56w-mbstring php56w-xml php56w-xmlrpc git ruby ruby-devel rubygems -y
