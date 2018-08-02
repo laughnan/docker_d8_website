@@ -10,7 +10,7 @@ RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 # install necessary libraries (includes php, ruby, gems, and git)
 RUN yum install php56w php56w-mbstring php56w-xml php56w-xmlrpc php56w-gd php56w-pdo git gcc-c++ patch readline readline-devel zlib zlib-devel curl \
     libyaml-devel libffi-devel openssl-devel make \
-    bzip2 autoconf automake libtool bison iconv-devel sqlite-devel -y \
+    bzip2 autoconf automake libtool bison iconv-devel sqlite-devel -y
 	
 # install RVM
 RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
