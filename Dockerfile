@@ -10,7 +10,7 @@ RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 # install necessary libraries (includes php, ruby, gems, and git)
 RUN yum install php56w php56w-mbstring php56w-xml php56w-xmlrpc php56w-gd php56w-pdo git centos-release-scl-rh centos-release-scl -y
 
-RUN yum install rh-ruby22 ruby-devel rubygems -y
+RUN yum install rh-ruby22 rh-ruby22-ruby-devel rh-ruby22-rubygems -y
 
 RUN scl enable rh-ruby22 bash
 
