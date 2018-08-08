@@ -17,14 +17,10 @@ RUN yum install bzip2 autoconf automake libtool bison iconv-devel sqlite-devel -
 
 # get rvm to install
 RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-RUN curl -L get.rvm.io | bash -s stable
+RUN curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 # install the correct versions and details for ruby 2.2+
-RUN source /etc/profile.d/rvm.sh
-RUN rvm reload
-RUN rvm requirements run
-RUN rvm install 2.2.4
-RUN rvm use 2.2.4 --default
+RUN source /etc/profile.d/rvm.sh && rvm reload && rvm requirements run && rvm install 2.2.4 && rvm use 2.2.4 --default
 RUN ruby --version
 RUN rvm rubygems current
 
