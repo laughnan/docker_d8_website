@@ -8,7 +8,7 @@ RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # install necessary libraries (includes php, ruby, gems, and git)
-RUN yum install php56w php56w-mbstring php56w-xml php56w-xmlrpc php56w-gd php56w-pdo git centos-release-scl-rh centos-release-scl -y
+RUN yum install php56w php56w-mbstring php56w-xml php56w-xmlrpc php56w-gd php56w-pdo git which centos-release-scl-rh centos-release-scl -y
 
 # requirements for rvm
 RUN yum install gcc-c++ patch readline readline-devel zlib zlib-devel -y
