@@ -20,7 +20,7 @@ RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 RUN curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 # install the correct versions and details for ruby 2.2+
-RUN source /etc/profile.d/rvm.sh && rvm reload && rvm requirements run && rvm install 2.2.4 && rvm use 2.2.4 --default
+RUN source /usr/local/rvm/scripts/rvm && rvm reload && rvm requirements run && rvm install 2.2.4 && rvm use 2.2.4 --default
 RUN ruby --version
 RUN rvm rubygems current
 
